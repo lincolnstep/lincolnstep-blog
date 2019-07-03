@@ -60,25 +60,30 @@
                 <h1 class="font-weight-bold ">About Me</h1>
 
                 <div class="row">
-
+                {% for aboutme in mybio|slice:":1"  %}
                     <div class="col-lg-4 col-md-4 col-sm-12 col-12 aboutright">
-                        <img src="{% static 'img/vivek.jpg' %}" alt="" class="img-fluid">
+                        {% if aboutme.aimage %}
+                        <img class="img-responsive" src="{{ aboutme.aimage.url }}">
+                        {% else %}
+                        {% endif %}
                     </div>
 
                     <div class="col-lg-8 col-md-8 col-sm-12 col-12 aboutleft">
-                        {% for aboutme in mybio|slice:":1"  %}
+
                         <h3 class="">{{aboutme.atitle}}</h3>
                         <p class="lead">{{aboutme.atext|safe}}</p>
 
-                        {% endfor %}
+
+
 
 
                     </div>
+                    {% endfor %}
 
 
 
                 </div>
-                <h3 class="p-4">The Projects I have done so far</h3>
+                <h3 class="p-4 btn btn-success btn-block">The Projects I have done so far</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     Doloribus saepe repudiandae, nisi, non tenetur temporibus!</p>
                 {% for project in projects %}
