@@ -29,4 +29,4 @@ admin.site.register(Aboutme,AboutmeAdmin)
 admin.site.register(Quote,QuoteAdmin)
 admin.site.unregister(Group)
 
-admin.site.site_header = "Vivek's Dashboard"
+admin.site.site_header = "Sree Jarugulla's Dashboard"
